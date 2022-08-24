@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class StageManager : MonoBehaviour
 {
@@ -13,11 +12,9 @@ public class StageManager : MonoBehaviour
 
     private void Start()
     {
-        GameObject.Find("Player");
-        Application.targetFrameRate = 60;
+        GameObject.Find("Player");        
         Player.GetComponent<PlayerMain>().myTorch.myLight.intensity = lightInitialIntensity;
-
-
+        GameManager.instance.AddCredit(3);
 
     }
 
@@ -55,7 +52,7 @@ public class StageManager : MonoBehaviour
 
     public void RestartScene()
     {
-        SceneManager.LoadScene(0);
+        GameManager.instance.RestartScene();
     }
 
 

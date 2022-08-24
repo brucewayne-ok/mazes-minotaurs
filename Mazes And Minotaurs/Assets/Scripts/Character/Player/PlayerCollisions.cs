@@ -32,9 +32,6 @@ public class PlayerCollisions : MonoBehaviour
         print($"player collided with: {other.gameObject.tag}");
         switch (other.gameObject.tag)
         {
-            case "WinPoint":
-                print("You won");
-                break;
             case "WallTorch":
                 mainScript.myTorch.TurnOn();
                 WalltorchTouch?.Raise();
